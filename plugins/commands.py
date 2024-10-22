@@ -61,7 +61,7 @@ async def start(client, message):
     await message.reply_photo(
         photo="https://graph.org/file/525c964922c42baeca2f8.jpg", 
         quote=True,
-        parse_mode=enums.ParseMode.HTML
+        parse_mode=enums.ParseMode.HTML,
         reply_markup=InlineKeyboardMarkup(main_buttons),
         caption=Translation.START_TXT.format(message.from_user.first_name))
 
