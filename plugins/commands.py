@@ -2,7 +2,6 @@ import os
 import sys
 import asyncio
 import datetime
-import time, pytz
 import psutil
 from pyrogram.types import Message
 from database import db, mongodb_version
@@ -11,8 +10,7 @@ from platform import python_version
 from translation import Translation
 from pyrogram import Client, filters, enums, __version__ as pyrogram_version
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaDocument
-from datetime import datetime
-TIMEZONE = "Asia/Kolkata"
+
 
 #Dont Remove My Credit @Silicon_Bot_Update 
 #This Repo Is By @Silicon_Official 
@@ -53,17 +51,6 @@ async def start(client, message):
             )
             return
 
-    current_time = datetime.now(pytz.timezone(TIMEZONE))
-    curr_time = current_time.hour        
-    if curr_time < 12:
-         gtxt = "<b>ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ☕</b>" 
-    elif curr_time < 17:
-         gtxt = "<b>ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 😈</b>" 
-    elif curr_time < 21:
-         gtxt = "<b>ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌇</b>"
-    else:
-         gtxt = "<b>ɢᴏᴏᴅ ɴɪɢʜᴛ 🥱</b>"
-
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id, message.from_user.mention)
         await client.send_message(
@@ -74,7 +61,7 @@ async def start(client, message):
     await client.send_photo(photo="https://graph.org/file/525c964922c42baeca2f8.jpg",
         chat_id=message.chat.id,
         reply_markup=InlineKeyboardMarkup(main_buttons),
-        caption=Translation.START_TXT.format(message.from_user.first_name, gtxt))
+        caption=Translation.START_TXT.format(message.from_user.first_name))
 
 #Dont Remove My Credit @Silicon_Bot_Update 
 #This Repo Is By @Silicon_Official 
