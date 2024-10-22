@@ -58,7 +58,7 @@ async def start(client, message):
             text=f"#NewUser\n\nIᴅ - {user.id}\nNᴀᴍᴇ - {message.from_user.mention}"
         )
     reply_markup = InlineKeyboardMarkup(main_buttons)
-    await client.send_photo(photo="https://graph.org/file/525c964922c42baeca2f8.jpg",
+    await message.reply_photo(photo="https://graph.org/file/525c964922c42baeca2f8.jpg",
         chat_id=message.chat.id,
         reply_markup=InlineKeyboardMarkup(main_buttons),
         caption=Translation.START_TXT.format(message.from_user.first_name))
