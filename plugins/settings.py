@@ -14,9 +14,9 @@ CLIENT = CLIENT()
 @Client.on_message(filters.command('settings'))
 async def settings(client, message):
    await message.delete()
-   await message.reply_text(
-     "<b>cʜᴀɴɢᴇ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ.</b>",
-     reply_markup=main_buttons()
+   await message.reply_photo(photo="https://envs.sh/poz.jpg", 
+     caption="<b>cʜᴀɴɢᴇ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ.</b>",
+     reply_markup=main_buttons(),
      )
     
 @Client.on_callback_query(filters.regex(r'^settings'))
