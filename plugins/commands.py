@@ -1,7 +1,7 @@
 import os
 import sys
 import asyncio 
-import time, datetime, pytz
+import time, pytz
 import psutil
 from pyrogram.types import Message
 from database import db, mongodb_version
