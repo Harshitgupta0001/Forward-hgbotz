@@ -9,9 +9,8 @@ class Translation(object):
 <b><spoiler>🔋Maintained by <a href='https://t.me/HGBOTZ'>H'GBOTZ</a></spoiler><b>"""
 
 
-  DONATE_TXT = """<b><i>If you liked me ❤️. consider make a donation to support my developer 👦
-
-UPI ID - </i></b><code>RahulReviews@UPI</code>"""
+  DONATE_TXT = """<b><i>If you liked me ❤️. NO NEED TO DONATION ONLY KEEP SUPPORT AND SHARE 😌
+~@HGBOTZ"""
 
   HELP_TXT = """<b><u>🔆 ʜᴇʟᴘ</b></u>
 
