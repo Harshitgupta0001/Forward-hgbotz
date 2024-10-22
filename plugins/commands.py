@@ -217,5 +217,5 @@ async def server_status(bot, query):
 @Client.on_message(filters.private & filters.command(['donate']))
 async def restart(client, message):
     msg = await message.reply_text(
-        text="<i>__If you liked my service❤__.\n\nConsider and make a donation to support my developer 👦\n\n\nUPI ID - `RahulReviews@UPI`</i>"
+        text=Translation.DONATE_TXT
         )
