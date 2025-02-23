@@ -1,4 +1,5 @@
 import asyncio
+import aiohttp
 import logging 
 import logging.config
 from database import db 
@@ -17,6 +18,23 @@ from plugins import web_server
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
+
+
+
+URL = "https ://your-app-link.koyeb.app/"  # Replace with your koyeb app link...
+
+async def ping():
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                async with session.get(URL) as response:
+                    print(f"Pinged server, status: {response.status}")
+            except Exception as e:
+                print(f"{e}")
+            await asyncio.sleep(600)
+
+loop = asyncio.get_event_loop()
+loop.create_task(ping()) 
 
 class Bot(Client): 
     def __init__(self):
